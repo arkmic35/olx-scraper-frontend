@@ -7,6 +7,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OffersComponent implements OnInit {
 
+  offers = [
+    {
+      "id": "597687780",
+      "name": "Very good item, high quality",
+      "price": "49 900 zł"
+    },
+    {
+      "id": "597687781",
+      "name": "Very good item, best quality",
+      "price": "51 900 zł"
+    }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

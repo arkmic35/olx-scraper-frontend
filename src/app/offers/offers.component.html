@@ -8,23 +8,11 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>3</td>
-    <td>3</td>
-    <td>3</td>
+  <tr *ngFor="let offer of offers, index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{offer.id}}</td>
+    <td>{{offer.name}}</td>
+    <td>{{offer.price}}</td>
   </tr>
   </tbody>
 </table>
