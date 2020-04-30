@@ -3,10 +3,12 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {OffersComponent} from './offers/offers.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OffersComponent
   ],
   imports: [
     BrowserModule,
