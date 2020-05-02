@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {OffersComponent} from "./offers/offers.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'OlxScraperFrontend';
+  @ViewChild(OffersComponent, {static: false}) offers;
+
+  onClickSearch() {
+    this.offers.loadOffers();
+  }
 }
