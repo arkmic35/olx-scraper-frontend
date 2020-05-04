@@ -3,14 +3,14 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {OffersComponent} from './offers/offers.component';
+import {OffersListComponent} from './component/offerslist/offers-list.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    OffersComponent
+    OffersListComponent
   ],
   imports: [
     BrowserModule,
