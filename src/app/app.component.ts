@@ -8,9 +8,11 @@ import {OffersComponent} from "./offers/offers.component";
 })
 export class AppComponent {
   title = 'OlxScraperFrontend';
+  keyword = '';
+
   @ViewChild(OffersComponent, {static: false}) offers;
 
   onClickSearch() {
-    this.offers.loadOffers();
+    this.offers.loadOffers(this.keyword);
   }
 }
