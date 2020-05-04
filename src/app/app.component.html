@@ -8,7 +8,7 @@
       <input type="text" class="form-control" [(ngModel)]="keyword" name="keywordName"
              id="keyword" placeholder="Keyword">
       <div class="input-group-append">
-        <button type="button" class="btn btn-outline-primary" (click)="onClickSearch()">Search</button>
+        <button type="button" class="btn btn-outline-primary" [disabled]="!keyword" (click)="onClickSearch()">Search</button>
       </div>
     </div>
   </form>
