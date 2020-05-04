@@ -17,6 +17,10 @@ export class OffersListComponent implements OnInit {
   }
 
   loadOffers(keyword): void {
-    this.offers = this.offerService.getOffers(keyword);
+    this.offerService
+      .getOffers(keyword)
+      .subscribe(result => {
+        this.offers = result.offers;
+      })
   }
 }

@@ -1,26 +1,16 @@
 import {Injectable} from '@angular/core';
-import {Offer} from "../model/Offer";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {OffersResponse} from "../model/OffersResponse";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class OfferService {
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  getOffers(keyword: string): Offer[] {
-    return [
-      {
-        "id": "597687780",
-        "name": "Very good " + keyword + " of high quality",
-        "price": "49 900 zł"
-      },
-      {
-        "id": "597687781",
-        "name": "Very good " + keyword + "of best quality",
-        "price": "51 900 zł"
-      }
-    ];
+  getOffers(keyword: string): Observable<OffersResponse> {
+    return this.httpClient
+      .get<OffersResponse>("http://localhost:8080/offers/olx/" + keyword, {responseType: 'json'});
   }
 }
