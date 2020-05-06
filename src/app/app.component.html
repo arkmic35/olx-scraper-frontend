@@ -1,7 +1,16 @@
 <div class="container">
-  <h1>OLX Scraper</h1>
-  <p>Type the expected keyword and press Search to fetch announcements list. Results will appear below.</p>
+  <div class="row">
+    <h1>OLX Scraper</h1>
+  </div>
+  <div class="row">
+    <p>Type the expected keyword and press Search to fetch announcements list. Results will appear below.</p>
+  </div>
 
-  <app-keyword-form (requestSearch)="onRequestSearch($event)"></app-keyword-form>
-  <app-offers></app-offers>
+  <div class="row">
+    <app-keyword-form (requestSearch)="onRequestSearch($event)"></app-keyword-form>
+  </div>
+
+  <div class="row" id="offersListRow">
+    <app-offers></app-offers>
+  </div>
 </div>
