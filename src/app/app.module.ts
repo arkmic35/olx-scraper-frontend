@@ -6,11 +6,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {OffersListComponent} from './component/offerslist/offers-list.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {KeywordFormComponent} from './component/keyword-form/keyword-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OffersListComponent
+    OffersListComponent,
+    KeywordFormComponent
   ],
   imports: [
     BrowserModule,

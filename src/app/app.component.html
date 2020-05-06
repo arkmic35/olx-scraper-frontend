@@ -2,16 +2,6 @@
   <h1>OLX Scraper</h1>
   <p>Type the expected keyword and press Search to fetch announcements list. Results will appear below.</p>
 
-  <form class="form-inline">
-    <label class="sr-only" for="keyword">Keyword</label>
-    <div class="input-group">
-      <input type="text" class="form-control" [(ngModel)]="keyword" name="keywordName"
-             id="keyword" placeholder="Keyword">
-      <div class="input-group-append">
-        <button type="button" class="btn btn-outline-primary" [disabled]="!keyword" (click)="onClickSearch()">Search</button>
-      </div>
-    </div>
-  </form>
-
+  <app-keyword-form (requestSearch)="onRequestSearch($event)"></app-keyword-form>
   <app-offers></app-offers>
 </div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {OfferService} from "../../service/offer.service";
 
 @Component({
@@ -6,17 +6,14 @@ import {OfferService} from "../../service/offer.service";
   templateUrl: './offers-list.component.html',
   styleUrls: ['./offers-list.component.less']
 })
-export class OffersListComponent implements OnInit {
+export class OffersListComponent {
 
   offers = [];
 
   constructor(private offerService: OfferService) {
   }
 
-  ngOnInit(): void {
-  }
-
-  loadOffers(keyword): void {
+  public loadOffers(keyword): void {
     this.offerService
       .getOffers(keyword)
       .subscribe(result => {

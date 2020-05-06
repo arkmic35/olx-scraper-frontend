@@ -1,0 +1,12 @@
+<form class="form-inline">
+  <label class="sr-only" for="keyword">Keyword</label>
+  <div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="keyword" name="keywordName"
+           id="keyword" placeholder="Keyword">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-outline-primary" [disabled]="!keyword" (click)="onClickSearch(keyword)">
+        Search
+      </button>
+    </div>
+  </div>
+</form>
