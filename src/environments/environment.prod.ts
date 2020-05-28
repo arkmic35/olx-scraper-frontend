@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  offersEndpointUrl: 'Set production offers endpoint URL here!'
 };

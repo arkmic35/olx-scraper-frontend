@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {OffersResponse} from '../model/OffersResponse';
+import {environment} from '../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class OfferService {
@@ -12,6 +13,6 @@ export class OfferService {
 
   getOffers(keyword: string): Observable<OffersResponse> {
     return this.httpClient
-      .get<OffersResponse>('http://localhost:8080/offers/olx/' + keyword, {responseType: 'json'});
+      .get<OffersResponse>(environment.offersEndpointUrl + keyword, {responseType: 'json'});
   }
 }
