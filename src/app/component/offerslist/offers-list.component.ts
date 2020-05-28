@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+
 import {OfferService} from "../../service/offer.service";
 import {ListStatus} from "./list.status";
 
