@@ -8,7 +8,7 @@ import {ListStatus} from './list.status';
   templateUrl: './offers-list.component.html',
 })
 export class OffersListComponent {
-
+  listStatuses = ListStatus;
   status = ListStatus.NO_DATA;
   offers = [];
 
