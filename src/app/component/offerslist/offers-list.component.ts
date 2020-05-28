@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
-import {OfferService} from "../../service/offer.service";
-import {ListStatus} from "./list.status";
+import {OfferService} from '../../service/offer.service';
+import {ListStatus} from './list.status';
 
 @Component({
   selector: 'app-offers',
@@ -24,7 +24,7 @@ export class OffersListComponent {
       .subscribe(
         result => this.correctlyLoaded(result),
         error => this.loadingError(error)
-      )
+      );
   }
 
   private correctlyLoaded(result) {

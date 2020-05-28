@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 
-import {OffersListComponent} from "./component/offerslist/offers-list.component";
+import {OffersListComponent} from './component/offerslist/offers-list.component';
 
 @Component({
   selector: 'app-root',

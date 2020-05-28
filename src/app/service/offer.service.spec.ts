@@ -1,6 +1,6 @@
 import {OfferService} from './offer.service';
-import {HttpClient} from "@angular/common/http";
-import {of} from "rxjs";
+import {HttpClient} from '@angular/common/http';
+import {of} from 'rxjs';
 
 describe('OfferService', () => {
   let httpClient: HttpClient;
@@ -22,18 +22,18 @@ describe('OfferService', () => {
   });
 
   it('should call http client', () => {
-    spy = spyOn(httpClient, 'get').and.returnValue(of("OK"));
+    spy = spyOn(httpClient, 'get').and.returnValue(of('OK'));
 
     expect(service.getOffers(null)).toBeTruthy();
     expect(httpClient.get).toHaveBeenCalled();
   });
 
   it('should call http client with correct arguments', () => {
-    let keyword = "MacBook";
-    let expectedUrl = "http://localhost:8080/offers/olx/MacBook";
+    const keyword = 'MacBook';
+    const expectedUrl = 'http://localhost:8080/offers/olx/MacBook';
 
     spy = spyOn(httpClient, 'get')
-      .withArgs(expectedUrl, {responseType: 'json'}).and.returnValue(of("OK"));
+      .withArgs(expectedUrl, {responseType: 'json'}).and.returnValue(of('OK'));
 
     expect(service.getOffers(keyword)).toBeTruthy();
     expect(httpClient.get).toHaveBeenCalled();

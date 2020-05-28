@@ -8,7 +8,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 export class KeywordFormComponent {
   keyword = '';
 
-  @Output() requestSearch = new EventEmitter<String>();
+  @Output() requestSearch = new EventEmitter<string>();
 
   onClickSearch(keyword: string) {
     this.requestSearch.emit(keyword);
