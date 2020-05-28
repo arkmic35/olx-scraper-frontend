@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {takeWhile} from 'rxjs/operators';
 
 import {OfferService} from '../../service/offer.service';
 import {ListStatus} from './list.status';
@@ -7,12 +8,21 @@ import {ListStatus} from './list.status';
   selector: 'app-offers',
   templateUrl: './offers-list.component.html',
 })
-export class OffersListComponent {
+export class OffersListComponent implements OnInit, OnDestroy {
   listStatuses = ListStatus;
   status = ListStatus.NO_DATA;
   offers = [];
+  isActive = false;
 
   constructor(private offerService: OfferService) {
+  }
+
+  ngOnInit(): void {
+    this.isActive = true;
+  }
+
+  ngOnDestroy(): void {
+    this.isActive = false;
   }
 
   public loadOffers(keyword): void {
@@ -20,6 +30,7 @@ export class OffersListComponent {
 
     this.offerService
       .getOffers(keyword)
+      .pipe(takeWhile(() => this.isActive))
       .subscribe(
         result => this.correctlyLoaded(result),
         error => this.loadingError(error)
