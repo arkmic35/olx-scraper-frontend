@@ -6,7 +6,6 @@ import {ListStatus} from './list.status';
 @Component({
   selector: 'app-offers',
   templateUrl: './offers-list.component.html',
-  styleUrls: ['./offers-list.component.less']
 })
 export class OffersListComponent {
 
